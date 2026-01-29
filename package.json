@@ -1,0 +1,31 @@
+{
+  "name": "monorepo-store-demo",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "npm@11.6.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "dev:server": "npm run dev --workspace=@store-demo/server",
+    "dev:client": "npm run dev --workspace=@store-demo/client",
+    "dev:ui": "npm run dev --workspace=@store-demo/ui",
+    "build": "turbo build",
+    "build:server": "npm run build --workspace=@store-demo/server",
+    "build:client": "npm run build --workspace=@store-demo/client",
+    "build:ui": "npm run build --workspace=@store-demo/ui",
+    "start": "turbo start",
+    "start:server": "npm run start --workspace=@store-demo/server",
+    "start:client": "npm run start --workspace=@store-demo/client",
+    "lint": "turbo lint",
+    "storybook": "npm run storybook --workspace=@store-demo/ui",
+    "build-storybook": "npm run build-storybook --workspace=@store-demo/ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "playwright": "^1.58.0",
+    "turbo": "^2.0.0"
+  }
+}
