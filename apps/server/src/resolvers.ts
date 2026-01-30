@@ -27,5 +27,10 @@ export const resolvers = {
 
   Order: {
     products: (parent: Order) => store.getProductsByIds(parent.productIds),
+    total: (parent: Order) => {
+      const products = store.getProductsByIds(parent.productIds);
+      const sum = products.reduce((acc, p) => acc + p.price, 0);
+      return Math.round(sum * 100) / 100;
+    },
   },
 };

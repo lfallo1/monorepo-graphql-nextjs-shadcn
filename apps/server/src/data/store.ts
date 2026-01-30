@@ -17,14 +17,12 @@ const orders: Order[] = [
     id: '1',
     userId: '1',
     productIds: ['1', '2'],
-    total: 1029.98,
     createdAt: '2024-01-15T10:30:00Z',
   },
   {
     id: '2',
     userId: '1',
     productIds: ['3'],
-    total: 79.99,
     createdAt: '2024-01-20T14:00:00Z',
   },
 ];
@@ -56,14 +54,10 @@ export const store = {
   getOrderById: (id: string) => orders.find(o => o.id === id),
   getOrdersByUserId: (userId: string) => orders.filter(o => o.userId === userId),
   createOrder: (input: { userId: string; productIds: string[] }): Order => {
-    const orderProducts = store.getProductsByIds(input.productIds);
-    const total = orderProducts.reduce((sum, p) => sum + p.price, 0);
-
     const order: Order = {
       id: String(nextOrderId++),
       userId: input.userId,
       productIds: input.productIds,
-      total: Math.round(total * 100) / 100,
       createdAt: new Date().toISOString(),
     };
     orders.push(order);
