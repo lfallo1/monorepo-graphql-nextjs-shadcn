@@ -1,5 +1,5 @@
-import { store } from './data/store.js';
-import { Order, CreateProductInput, CreateOrderInput } from './types.js';
+import { store } from './data/store.ts';
+import { Order, CreateProductInput, CreateOrderInput } from './types.ts';
 
 export const resolvers = {
   Query: {

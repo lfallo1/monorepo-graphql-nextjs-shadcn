@@ -1,4 +1,4 @@
-import { Product, Order, User, CreateProductInput, CreateOrderInput } from '../types/index.js';
+import { Product, Order, User, CreateProductInput, CreateOrderInput } from '../types/index.ts';
 
 // Internal types that store raw data (without resolved fields)
 interface StoredUser {

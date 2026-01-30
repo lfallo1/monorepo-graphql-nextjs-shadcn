@@ -1,3 +1,3 @@
-export { ProductResolver } from './product.resolver.js';
-export { OrderResolver } from './order.resolver.js';
-export { UserResolver } from './user.resolver.js';
+export { ProductResolver } from './product.resolver.ts';
+export { OrderResolver } from './order.resolver.ts';
+export { UserResolver } from './user.resolver.ts';
